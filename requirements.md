@@ -36,7 +36,7 @@
 
 ## Manual tasks (check for possible automation)
 - Plank
-  - add to auto start
+  - add to auto start => find /usr/share/applications -name "plank.desktop" -exec cp -p {} ~/.config/autostart/ \;
   - choose appli to put in
 - FF settings multiples tabs on close
 - Global Menu bar
