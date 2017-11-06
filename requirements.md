@@ -1,7 +1,12 @@
 # Requirements
 
 ## Commun
+- .bashrc
+  - décommenter "#force_color_prompt=yes" ligne 46 de .bashrc
 - atom:
+    - wget URL -O atom.deb && sudo dpkg -i atom.deb
+    - $ apm config set proxy $http_proxy (valeur issue de .bash_proxy)
+    - $ apm config set https_proxy $https_proxy (valeur issue de .bash_proxy)
     - packages.txt
     - themes.txt
     - config.cson
@@ -11,6 +16,7 @@
 - synaptic
 - plank
 - git
+  - ajout git completion & git prompt (\_\_git\_ps1)
 - python 2.7
 - python-pip + packages:
   - fabric
@@ -56,7 +62,10 @@
       [PlankDockItemPreferences]
       Launcher=file:///usr/share/applications/mate-terminal.desktop
   
-- FF settings multiples tabs on close
+- FF settings : close multiple tabs = no warning
+  - about:config page:
+      - browser.tabs.warnOnCloseOtherTabs -> False
+      - browser.tabs.warnOnClose -> False 
 - Global Menu bar
   - (install = vala appmenu)
   - stop menu display in windows
