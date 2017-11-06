@@ -31,10 +31,13 @@
   - ssh completion
   - clé ssh
 - proxy settings
-  - bash http_proxy, apt:
+  - bash http_proxy:
     - export http_proxy = http://$user:$passwd@$proxy:$port
     - export https_proxy = https://$user:$passwd@$proxy:$port
     - variables à mettre dans ~/.bash_proxy
+  - apt:
+    - nv fichier /etc/apt/apt.conf.d/99-proxy-setup
+      - contenu = Acquire::http::Proxy "http://$user:$passwd@$proxy:$port";
   - pip:
     - file ~/pip/pip.ini content:
       [global]
