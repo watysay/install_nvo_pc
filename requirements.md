@@ -38,6 +38,10 @@
 - Plank
   - add to auto start => find /usr/share/applications -name "plank.desktop" -exec cp -p {} ~/.config/autostart/ \;
   - choose appli to put in
+    - content of file ~/.config/plank/dock1/launchers/mate-terminal.dockitem:
+      [PlankDockItemPreferences]
+      Launcher=file:///usr/share/applications/mate-terminal.desktop
+  
 - FF settings multiples tabs on close
 - Global Menu bar
   - (install = vala appmenu)
