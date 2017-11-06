@@ -32,13 +32,13 @@
   - clé ssh
 - proxy settings
   - bash http_proxy, apt:
-    - export http_proxy = http://<user>:<passwd>@<proxy>:<port>
-    - export https_proxy = https://<user>:<passwd>@<proxy>:<port>
+    - export http_proxy = http://$user:$passwd@$proxy:$port
+    - export https_proxy = https://$user:$passwd@$proxy:$port
     - variables à mettre dans ~/.bash_proxy
   - pip:
     - file ~/pip/pip.ini content:
       [global]
-      proxy = https://<user>:<passwd>@<proxy>:<port>
+      proxy = https://$user:$passwd@$proxy:$port
   - paramétrage FF:
     - Préférences > Général > Param Proxy > Adresse de config auto du proxy > xyz proxy.pac
 - .bashrc:
