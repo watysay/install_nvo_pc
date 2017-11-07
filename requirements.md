@@ -16,7 +16,13 @@
 - synaptic
 - plank
 - git
-  - ajout git completion & git prompt (\_\_git\_ps1)
+  - git prompt
+    - source file /usr/lib/git-core/git-sh-prompt
+      in /etc/bash_completion.d/git-prompt
+      (which is sourced throught .bashrc)
+  - git completion
+    - add https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+      to /etc/bash_completion.d/
 - python 2.7
 - python-pip + packages:
   - fabric
