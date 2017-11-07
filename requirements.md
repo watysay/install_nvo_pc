@@ -57,6 +57,7 @@
       proxy = https://$user:$passwd@$proxy:$port
   - paramétrage FF:
     - Préférences > Général > Param Proxy > Adresse de config auto du proxy > xyz proxy.pac
+  - _note_: git clone https not working => copy ssh key to github
 - .bashrc:
     - source ~/.bash_proxy
 - terminator
