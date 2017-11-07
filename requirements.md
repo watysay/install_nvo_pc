@@ -22,6 +22,7 @@
   - fabric
 - vim
   - .vimrc
+- favoris FF/Chrome
 
 ## Maison
 - skype
@@ -53,6 +54,8 @@
 - .bashrc:
     - source ~/.bash_proxy
 - terminator
+- Favoris FF
+  - copier un fichier HTML
 
 ## Manual tasks (check for possible automation)
 - Plank
