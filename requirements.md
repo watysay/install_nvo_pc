@@ -65,6 +65,8 @@
 - terminator
 - Favoris FF
   - copier un fichier HTML
+- ajouter les partages réseau
+- ajouter les imprimantes
 
 ## Manual tasks (check for possible automation)
 - Plank
