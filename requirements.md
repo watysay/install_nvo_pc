@@ -39,10 +39,12 @@
 
 ## Boulot
 (récupérer cette partie depuis GitLab)
-- config ssh
+- config ssh interne
+  - clé ssh
+  - uploader to GitLab (manual)
+- config ssh vers autres serveurs
   - .ssh/config
   - ssh completion
-  - clé ssh
 - proxy settings
   - bash http_proxy:
     - export http_proxy = http://$user:$passwd@$proxy:$port
