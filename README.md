@@ -8,10 +8,10 @@ readme d'installation d'un nouveau pc ou d'une nouvelle VM
 ---
 ## TODOs
 - [x] Start project
-- [ ] Add list of elements to save/reinstall
+- [x] Add list of elements to save/reinstall
 - [ ] Save config files for each elements
 - [ ] Write execution file(s) for (each|all)
-
+- [ ] voir ansible-pull /!\
 ---
 ## HOWTO :
 1. install git
@@ -20,15 +20,21 @@ readme d'installation d'un nouveau pc ou d'une nouvelle VM
 (--> utiliser Ansible ?)
 
 ---
-## create Ansible dir structure
+## BASIQUE
+fichier host avec \[local\]localhost
+fichier playbook.yml avec hosts:local connection:local
+run ansible-playbook -i hosts playbook.yml
+
+## AVANCE
+### create Ansible dir structure
 mkdir -p new_project
 
 cd new_project
-#### inventory and master playbook
+##### inventory and master playbook
 touch production staging site.yml 
-#### folders
+##### folders
 mkdir -p group_vars host_vars library filter_plugins
-#### create role "common" with all the folders:
+##### create role "common" with all the folders:
 mkdir -p roles/common/{tasks,handlers,templates,files,vars,defaults,meta}
 
 touch roles/common/{tasks,handlers,templates,files,vars,defaults,meta}/main.yml
