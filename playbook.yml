@@ -9,6 +9,5 @@
       ping:
     
     - name: installation de Atom
-      apt:
-        deb: https://github.com/atom/atom/releases/download/v1.22.0/atom-amd64.deb
+      apt: deb="https://github.com/atom/atom/releases/download/v1.22.0/atom-amd64.deb"
 ...
