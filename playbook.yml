@@ -1,0 +1,11 @@
+---
+
+- name: a playbook to setup my local machine with my basic customizations
+  hosts: local
+  connection: local
+  
+  tasks:
+    - name: test de connexion
+      ping:
+
+...
