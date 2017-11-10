@@ -16,8 +16,5 @@
     #    deb:"https://github.com/atom/atom/releases/download/v1.22.0/atom-amd64.deb"
     # not working w/ vagrant - trusty64
      
-     -name: Recuperation Atom
-      shell: wget https://github.com/atom/atom/releases/download/v1.22.0/atom-amd64.deb -O atom.deb
-
     
 ...
