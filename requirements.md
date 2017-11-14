@@ -57,9 +57,10 @@
     - nv fichier /etc/apt/apt.conf.d/99-proxy-setup
       - contenu = Acquire::http::Proxy "http://$user:$passwd@$proxy:$port";
   - pip:
-    - file ~/pip/pip.ini content:
+    - pip respects $http_proxy and $https_proxy settings
+    (- file ~/pip/pip.ini content:
       [global]
-      proxy = https://$user:$passwd@$proxy:$port
+      proxy = https://$user:$passwd@$proxy:$port)
   - paramétrage FF:
     - Préférences > Général > Param Proxy > Adresse de config auto du proxy > xyz proxy.pac
   - atom:
