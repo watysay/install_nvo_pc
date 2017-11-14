@@ -20,7 +20,6 @@
       with_items:
          - tree
          - synaptic
-         - cowsay
          - python
          - python-pip
       become: yes
@@ -33,4 +32,13 @@
          - virtualenv
          - Fabric
       become: yes
+      
+    - name: Decommente "#force_color_prompt=yes" ligne 46 de .bashrc
+      lineinfile:
+        path: "{{ ansible_user_dir }}/bashrc"
+        regexp: '#?\s*force_color_prompt='
+        line: force_color_prompt=yes
+    
+    
+    
 ...
