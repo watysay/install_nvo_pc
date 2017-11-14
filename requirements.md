@@ -1,33 +1,36 @@
 # Requirements
 
 ## Commun
-- [ ] .bashrc
-  - décommenter "#force_color_prompt=yes" ligne 46 de .bashrc
-- [ ] atom:
-    - wget URL -O atom.deb && sudo dpkg -i atom.deb
-    - $ apm config set proxy $http_proxy (valeur issue de .bash_proxy)
-    - $ apm config set https_proxy $https_proxy (valeur issue de .bash_proxy)
-    - packages.txt
-    - themes.txt
-    - config.cson
-    - .apmrc (?)
-- [ ] tree
-- [ ] ansible
-- [ ] synaptic
-- [ ] plank
-- [ ] git
-  - git prompt
-    - source file /usr/lib/git-core/git-sh-prompt
-      in /etc/bash_completion.d/git-prompt
-      (which is sourced throught .bashrc)
-  - git completion
-    - add https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-      to /etc/bash_completion.d/
-- [ ] python 2.7
-- [ ] python-pip + packages:
+
+### packages
+- [x] atom ( wget URL -O atom.deb && sudo dpkg -i atom.deb )
+- [x] tree
+- [x] ansible
+- [x] synaptic
+- [x] plank
+- [x] git
+- [x] python 2.7
+- [x] python-pip + packages:
   - fabric
-- [ ] vim
-  - .vimrc
+- [x] vim
+
+### fichiers à copier
+- [x] .bashrc
+  - décommenter "#force_color_prompt=yes" ligne 46 de .bashrc
+  - ou copier un fichier
+- [ ] atom:
+  - packages.txt
+  - themes.txt
+  - config.cson
+  - .apmrc (?)
+- [ ] git prompt
+  - source file /usr/lib/git-core/git-sh-prompt
+    in /etc/bash_completion.d/git-prompt
+    (which is sourced throught .bashrc)
+- [ ] git completion
+  - add https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+    to /etc/bash_completion.d/
+- [ ] .vimrc
 - [ ] favoris FF/Chrome
 
 ## Maison
@@ -59,6 +62,9 @@
       proxy = https://$user:$passwd@$proxy:$port
   - paramétrage FF:
     - Préférences > Général > Param Proxy > Adresse de config auto du proxy > xyz proxy.pac
+  - atom:
+    - $ apm config set proxy $http_proxy (valeur issue de .bash_proxy)
+    - $ apm config set https_proxy $https_proxy (valeur issue de .bash_proxy)
   - _note_: 
     - git clone https not working w/ proxy
     - no copy ssh key on github :/
