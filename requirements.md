@@ -1,9 +1,9 @@
 # Requirements
 
 ## Commun
-- .bashrc
+- [ ] .bashrc
   - décommenter "#force_color_prompt=yes" ligne 46 de .bashrc
-- atom:
+- [ ] atom:
     - wget URL -O atom.deb && sudo dpkg -i atom.deb
     - $ apm config set proxy $http_proxy (valeur issue de .bash_proxy)
     - $ apm config set https_proxy $https_proxy (valeur issue de .bash_proxy)
@@ -11,11 +11,11 @@
     - themes.txt
     - config.cson
     - .apmrc (?)
-- tree
-- ansible
-- synaptic
-- plank
-- git
+- [ ] tree
+- [ ] ansible
+- [ ] synaptic
+- [ ] plank
+- [ ] git
   - git prompt
     - source file /usr/lib/git-core/git-sh-prompt
       in /etc/bash_completion.d/git-prompt
@@ -23,29 +23,29 @@
   - git completion
     - add https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
       to /etc/bash_completion.d/
-- python 2.7
-- python-pip + packages:
+- [ ] python 2.7
+- [ ] python-pip + packages:
   - fabric
-- vim
+- [ ] vim
   - .vimrc
-- favoris FF/Chrome
+- [ ] favoris FF/Chrome
 
 ## Maison
-- skype
-- nmap
-- /home/seb/scripts
-- vala appmenu
-- xflux
+- [ ] skype
+- [ ] nmap
+- [ ] /home/seb/scripts
+- [ ] vala appmenu
+- [ ] xflux
 
 ## Boulot
 (récupérer cette partie depuis GitLab)
-- config ssh interne
+- [ ] config ssh interne
   - clé ssh
   - uploader to GitLab (manual)
-- config ssh vers autres serveurs
+- [ ] config ssh vers autres serveurs
   - .ssh/config
   - ssh completion
-- proxy settings
+- [ ] proxy settings
   - bash http_proxy:
     - export http_proxy = http://$user:$passwd@$proxy:$port
     - export https_proxy = https://$user:$passwd@$proxy:$port
@@ -62,27 +62,27 @@
   - _note_: 
     - git clone https not working w/ proxy
     - no copy ssh key on github :/
-- .bashrc:
+- [ ] .bashrc:
     - source ~/.bash_proxy
-- terminator
-- Favoris FF
+- [ ] terminator
+- [ ] Favoris FF
   - copier un fichier HTML
-- ajouter les partages réseau
-- ajouter les imprimantes
+- [ ] ajouter les partages réseau
+- [ ] ajouter les imprimantes
 
 ## Manual tasks (check for possible automation)
-- Plank
+- [ ] Plank
   - add to auto start => find /usr/share/applications -name "plank.desktop" -exec cp -p {} ~/.config/autostart/ \;
   - choose appli to put in
     - content of file ~/.config/plank/dock1/launchers/mate-terminal.dockitem:
       [PlankDockItemPreferences]
       Launcher=file:///usr/share/applications/mate-terminal.desktop
   
-- FF settings : close multiple tabs = no warning
+- [ ] FF settings : close multiple tabs = no warning
   - about:config page:
       - browser.tabs.warnOnCloseOtherTabs -> False
       - browser.tabs.warnOnClose -> False 
-- Global Menu bar
+- [ ] Global Menu bar
   - (install = vala appmenu)
   - stop menu display in windows
 
