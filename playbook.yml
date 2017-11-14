@@ -19,6 +19,9 @@
         state: present
       with_items:
          - tree
+         - git
+         - plank
+         - vim
          - synaptic
          - python
          - python-pip
