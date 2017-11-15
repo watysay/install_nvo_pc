@@ -10,9 +10,10 @@ readme d'installation d'un nouveau pc ou d'une nouvelle VM
 - [x] Start project
 - [x] Add list of elements to save/reinstall
 - [x] ultra simple bootstrap
+- [ ] write export process
 - [ ] Save config files for each elements
 - [ ] Write execution file(s) for (each|all)
-- [ ] voir ansible-pull (/!\ semble buggé)
+~~- [ ] voir ansible-pull (/!\ semble buggé)~~
 
 ---
 ## HOWTO :
@@ -30,4 +31,4 @@ fichier host avec \[local\]localhost
 
 fichier playbook.yml avec hosts:local connection:local
 
-run: ansible-playbook -i hosts playbook.yml
+run: ansible-playbook -i hosts playbook.yml --ask-become-pass
