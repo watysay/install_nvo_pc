@@ -13,11 +13,11 @@ readme d'installation d'un nouveau pc ou d'une nouvelle VM
 - [ ] write export process
 - [ ] Save config files for each elements
 - [ ] Write execution file(s) for (each|all)
-~~- [ ] voir ansible-pull (/!\ semble buggé)~~
+- ~~  voir ansible-pull (/!\ semble buggé)~~
 
 ---
 ## HOWTO :
-1. wget -O- https://raw.githubusercontent.com/watysay/install_nvo_pc/master/bootstrap.sh | bash
+Install: wget -O- https://raw.githubusercontent.com/watysay/install_nvo_pc/master/bootstrap.sh | bash
 
 ---
 ## BASIQUE
