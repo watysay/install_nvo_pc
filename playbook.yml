@@ -3,45 +3,24 @@
 - name: a playbook to setup my local machine with my basic customizations
   hosts: local
   connection: local
-  
+
+
+  roles:
+    - common
+
   tasks:
-    - name: test de connexion
-      ping:
-      
-    - name: Recuperation  
+
+    - name: Recuperation
       shell: wget https://github.com/atom/atom/releases/download/v1.22.0/atom-amd64.deb -O atom.deb
       args:
         creates: atom.deb
-        
-    - name: Installation de paquets généraux
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items:
-         - tree
-         - git
-         - plank
-         - vim
-         - synaptic
-         - python
-         - python-pip
-      become: yes
-         
-    - name: Installation pip
-      pip:
-        name: "{{ item }}"
-        state: present
-      with_items:
-         - virtualenv
-         - Fabric
-      become: yes
-      
+
     - name: Decommente "#force_color_prompt=yes" ligne 46 de .bashrc
       lineinfile:
         path: "{{ ansible_user_dir }}/bashrc"
         regexp: '#?\s*force_color_prompt='
         line: force_color_prompt=yes
-    
-    
-    
+
+
+
 ...
