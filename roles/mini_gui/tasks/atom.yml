@@ -1,0 +1,5 @@
+---
+- name: Recuperation
+  shell: wget https://github.com/atom/atom/releases/download/v1.22.0/atom-amd64.deb -O atom.deb
+  args:
+    creates: atom.deb
