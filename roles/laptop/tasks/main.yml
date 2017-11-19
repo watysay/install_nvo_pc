@@ -1,1 +1,6 @@
 ---
+#- name: installation de Vagrant
+#   import_playbook: vagrant.yml
+
+#- name: installation de Docker
+#   import_playbook: docker.yml
