@@ -76,10 +76,14 @@
   - copier un fichier HTML
 - [ ] ajouter les partages réseau
   - sudo vi /etc/fstab, ajouter une ligne 
+    
     //IP/path to folder/ <mount point>   cifs _netdev,credentials=<path>/.smbcredentials 0 0
   - créer le fichier <path>/.smbcredentials, ajouter les deux lignes
+  
     username=IDENTIFIANT
+    
     password=MOTDEPASSE
+    
     (remplacer avec les bonnes valeurs)
 
 - [ ] ajouter les imprimantes
