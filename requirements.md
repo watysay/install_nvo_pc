@@ -85,7 +85,7 @@
 - [ ] ajouter les partages réseau
   - sudo vi /etc/fstab, ajouter une ligne 
     ```
-    //IP/path to folder/ <mount point>   cifs _netdev,credentials=<path>/.smbcredentials 0 0
+    //IP/path to folder/ <mount point>   cifs _netdev,gid=<share group>,dir_mode=0775,file_mode=0775credentials=<some path>/.smbcredentials 0 0
     ```
   - créer le fichier <path>/.smbcredentials, ajouter les deux lignes
     ```
