@@ -50,22 +50,30 @@
   - ssh completion
 - [ ] proxy settings
   - bash http_proxy:
-    - export http_proxy = http://$user:$passwd@$proxy:$port
-    - export https_proxy = https://$user:$passwd@$proxy:$port
-    - variables à mettre dans ~/.bash_proxy
+    ```
+    $ export http_proxy = http://$user:$passwd@$proxy:$port
+    $ export https_proxy = https://$user:$passwd@$proxy:$port
+    ```
+    variables à mettre dans ~/.bash_proxy
   - apt:
-    - nv fichier /etc/apt/apt.conf.d/99-proxy-setup
-      - contenu = Acquire::http::Proxy "http://$user:$passwd@$proxy:$port";
+    - nv fichier /etc/apt/apt.conf.d/99-proxy-setup, contenant
+      ```
+      Acquire::http::Proxy "http://$user:$passwd@$proxy:$port";
+      ```
   - pip:
     - pip respects $http_proxy and $https_proxy settings
-    (- file ~/pip/pip.ini content:
+    - otherwise, file ~/pip/pip.ini content:
+      ```
       [global]
-      proxy = https://$user:$passwd@$proxy:$port)
+      proxy = https://$user:$passwd@$proxy:$port
+      ```
   - paramétrage FF:
     - Préférences > Général > Param Proxy > Adresse de config auto du proxy > xyz proxy.pac
   - atom:
-    - $ apm config set proxy $http_proxy (valeur issue de .bash_proxy)
-    - $ apm config set https_proxy $https_proxy (valeur issue de .bash_proxy)
+    ```
+    $ apm config set proxy $http_proxy (valeur issue de .bash_proxy)
+    $ apm config set https_proxy $https_proxy (valeur issue de .bash_proxy)
+    ```
   - _note_: 
     - git clone https not working w/ proxy
     - no copy ssh key on github :/
@@ -75,20 +83,38 @@
 - [ ] Favoris FF
   - copier un fichier HTML
 - [ ] ajouter les partages réseau
+  - sudo vi /etc/fstab, ajouter une ligne 
+    ```
+    //IP/path to folder/ <mount point>   cifs _netdev,gid=<share group>,dir_mode=0775,file_mode=0775,credentials=<some path>/.smbcredentials 0 0
+    ```
+  - créer le fichier <path>/.smbcredentials, ajouter les deux lignes
+    ```
+    username=IDENTIFIANT
+    password=MOTDEPASSE
+    ```
+    (remplacer avec les bonnes valeurs)
+
 - [ ] ajouter les imprimantes
 
 ## Manual tasks (check for possible automation)
 - [ ] Plank
-  - add to auto start => find /usr/share/applications -name "plank.desktop" -exec cp -p {} ~/.config/autostart/ \;
+  - add to auto start 
+    ```
+    find /usr/share/applications -name "plank.desktop" -exec cp -p {} ~/.config/autostart/ \;
+    ```
   - choose appli to put in
     - content of file ~/.config/plank/dock1/launchers/mate-terminal.dockitem:
+      ```
       [PlankDockItemPreferences]
       Launcher=file:///usr/share/applications/mate-terminal.desktop
+      ```
   
 - [ ] FF settings : close multiple tabs = no warning
   - about:config page:
-      - browser.tabs.warnOnCloseOtherTabs -> False
-      - browser.tabs.warnOnClose -> False 
+      ```
+      browser.tabs.warnOnCloseOtherTabs -> False
+      browser.tabs.warnOnClose -> False 
+      ```
 - [ ] Global Menu bar
   - (install = vala appmenu)
   - stop menu display in windows
