@@ -10,6 +10,7 @@ readme d'installation d'un nouveau pc ou d'une nouvelle VM
 - [x] Start project
 - [x] Add list of elements to save/reinstall
 - [x] ultra simple bootstrap
+- [ ] taggé les playbooks par type, puis filtre par tag sur le bootstrap
 - [ ] write export process
 - [ ] Save config files for each elements
 - [ ] Write execution file(s) for (each|all)

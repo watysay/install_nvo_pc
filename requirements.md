@@ -97,3 +97,13 @@
 Menu de la VM > Periphériques > Insérer l'image CD des Additions invités
 validations pour execution auto
 reboot necessaire
+
+## Notes
+virtualbox:
+"http://download.virtualbox.org/virtualbox/5.2.0/virtualbox-5.2_5.2.0-118431~Ubuntu~{{ ansible_distribution_release }}_amd64.deb
+
+atom:
+https://atom.io/download/deb
+
+vagrant:
+https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
