@@ -5,5 +5,6 @@
     regexp: '#?\s*force_color_prompt='
     line: force_color_prompt=yes
 
+# this is not working: can't call import_playbook here...
 - name: installing Atom
   import_playbook: atom.yml
