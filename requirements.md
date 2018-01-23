@@ -95,6 +95,15 @@
     (remplacer avec les bonnes valeurs)
 
 - [ ] ajouter les imprimantes
+- [ ] installer sqldeveloper
+    - copier le dossier sqldeveloper depuis C:/.../ dans /opt
+    - installer openjdk 1.7 ou 1.8 (warning sur 1.8)
+       ```
+       sudo apt-get install openjdk-8-jdk
+       ```
+       - (chemin d'installation : /usr/lib/jvm/java-8-openjdk-amd64)
+    - suivre les extras steps (5 -> 8) de https://askubuntu.com/questions/458554/how-to-install-sql-developer-on-ubuntu-14-04
+      (lien symbolique + modif du lanceur + raccourci application)
 
 ## Manual tasks (check for possible automation)
 - [ ] Plank
