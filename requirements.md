@@ -68,7 +68,7 @@
       proxy = https://$user:$passwd@$proxy:$port
       ```
   - paramétrage FF:
-    - Préférences > Général > Param Proxy > Adresse de config auto du proxy > xyz proxy.pac
+    - Préférences > Advanced > Network > 'Configure how FF connects to the internet' > xyz proxy.pac
   - atom:
     ```
     $ apm config set proxy $http_proxy (valeur issue de .bash_proxy)
