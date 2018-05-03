@@ -129,8 +129,16 @@
   - stop menu display in windows
 
 ## Special for VM: guest addition install
+pour virtualbox:
+
 Menu de la VM > Periphériques > Insérer l'image CD des Additions invités
 validations pour execution auto
+
+pour vmware:
+installer les packages
+- open-vm-tools
+- open-vm-tools-desktop
+
 reboot necessaire
 
 ## Notes
