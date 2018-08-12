@@ -6,12 +6,14 @@
 #   import_playbook: docker.yml
 
 - name: ajout du groupe sarah
+  become: yes
   group:
     name: sarah
     state: present
     gid: 1002
 
 - name: ajout de l'utilisateur sarah
+  become: yes
   user:
     name: sarah
     home: /home/sarah
