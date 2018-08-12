@@ -68,7 +68,7 @@
       proxy = https://$user:$passwd@$proxy:$port
       ```
   - paramétrage FF:
-    - Préférences > Général > Param Proxy > Adresse de config auto du proxy > xyz proxy.pac
+    - Préférences > Advanced > Network > 'Configure how FF connects to the internet' > xyz proxy.pac
   - atom:
     ```
     $ apm config set proxy $http_proxy (valeur issue de .bash_proxy)
@@ -95,6 +95,15 @@
     (remplacer avec les bonnes valeurs)
 
 - [ ] ajouter les imprimantes
+- [ ] installer sqldeveloper
+    - copier le dossier sqldeveloper depuis C:/.../ dans /opt
+    - installer openjdk 1.7 ou 1.8 (warning sur 1.8)
+       ```
+       sudo apt-get install openjdk-8-jdk
+       ```
+       - (chemin d'installation : /usr/lib/jvm/java-8-openjdk-amd64)
+    - suivre les extras steps (5 -> 8) de https://askubuntu.com/questions/458554/how-to-install-sql-developer-on-ubuntu-14-04
+      (lien symbolique + modif du lanceur + raccourci application)
 
 ## Manual tasks (check for possible automation)
 - [ ] Plank
@@ -120,8 +129,16 @@
   - stop menu display in windows
 
 ## Special for VM: guest addition install
+pour virtualbox:
+
 Menu de la VM > Periphériques > Insérer l'image CD des Additions invités
 validations pour execution auto
+
+pour vmware:
+installer les packages
+- open-vm-tools
+- open-vm-tools-desktop
+
 reboot necessaire
 
 ## Notes
