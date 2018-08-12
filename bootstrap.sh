@@ -3,7 +3,7 @@
 
 sudo apt-get update -yq 
 sudo apt-get install software-properties-common -yq
-sudo apt-add-repository ppa:ansible/ansible -yq
+sudo apt-add-repository ppa:ansible/ansible -y
 sudo apt-get update -yq
 sudo apt-get upgrade -yq
 
