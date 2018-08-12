@@ -6,8 +6,8 @@
 
 
   roles:
-    - common
-    - mini_gui
+    #- common
+    #- mini_gui
     - laptop
 
 ...

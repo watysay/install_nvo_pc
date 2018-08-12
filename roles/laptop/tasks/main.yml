@@ -4,3 +4,18 @@
 
 #- name: installation de Docker
 #   import_playbook: docker.yml
+
+- name: ajout du groupe sarah
+  group:
+    name: sarah
+    state: present
+    gid: 1002
+
+- name: ajout de l'utilisateur sarah
+  user:
+    name: sarah
+    home: /home/sarah
+    group: sarah
+    shell: /bin/bash
+    uid: 1001
+    password: $6$qNJWslr51Ume$d8Z3m6Ukst59PW9GOoOgKRcwMu8GaIx7j.jlVycpSFTJaKa.pAnmsfy8qAuT4Rr6trhEWKc2KlQL4kboJlLK1/
