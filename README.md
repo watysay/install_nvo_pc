@@ -13,6 +13,7 @@ readme d'installation d'un nouveau pc ou d'une nouvelle VM
 - [ ] taggé les playbooks par type, puis filtre par tag sur le bootstrap
 - [ ] write export process
 - [ ] Save config files for each elements
+  - [ ] Create folder ~/.bash containing all vars + call in .bash rc/\_profile
 - [ ] Write execution file(s) for (each|all)
 - ~~  voir ansible-pull (/!\ semble buggé)~~
 
