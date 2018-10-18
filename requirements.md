@@ -14,6 +14,8 @@
   - fabric
 - [x] vim
 
+(see Notes for how to find manually installed packages)
+
 ### fichiers à copier
 - [x] .bashrc
   - décommenter "#force_color_prompt=yes" ligne 46 de .bashrc
@@ -151,3 +153,7 @@ https://atom.io/download/deb
 
 vagrant:
 https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
+
+list of manually installed packages:
+```comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)```
+(https://unix.stackexchange.com/questions/3595/list-explicitly-installed-packages/3624#3624)
