@@ -56,7 +56,8 @@
     ```
     variables à mettre dans ~/.bash_proxy
   - apt:
-    - nv fichier /etc/apt/apt.conf.d/99-proxy-setup, contenant
+    - apt respects $http_proxy and $https_proxy settings ==> ```sudo -E apt-get ...```
+    - otherwise, nv fichier /etc/apt/apt.conf.d/99-proxy-setup, content:
       ```
       Acquire::http::Proxy "http://$user:$passwd@$proxy:$port";
       ```
