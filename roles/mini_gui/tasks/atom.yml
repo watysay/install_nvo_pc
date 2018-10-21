@@ -2,7 +2,7 @@
 - name: Recuperation
   shell: wget -O atom.deb https://atom.io/download/deb
   args:
-    creates: 
+    creates: atom.deb 
 
 #- name: Download atom.deb - test
 #  get_url:
