@@ -8,3 +8,5 @@
 #  get_url:
 #    url: https://atom.io/download/deb
 #    dest: atom.deb
+
+# module apt uses a deb arg => try that with URL
