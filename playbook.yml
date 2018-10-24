@@ -7,7 +7,7 @@
 
   roles:
     #- common
-    #- mini_gui
-    - laptop
+    #- laptop
 
+#comment laptop if in a VM
 ...
