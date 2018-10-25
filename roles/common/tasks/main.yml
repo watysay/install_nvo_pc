@@ -2,23 +2,26 @@
 - name: Installation de paquets généraux
   become: yes
   apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-     - tree
-     - git
-     - plank
-     - vim
-     - htop
-     - synaptic
-     - python
-     - python-pip
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - tree
+    - git
+    - plank
+    - vim
+    - htop
+    - synaptic
+    - python
+    - stow
+    - python-pip
 
 - name: Installation pip
   become: yes
   pip:
-    name: "{{ item }}"
-    state: present
-  with_items:
-     - virtualenv
-     - Fabric
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - virtualenv
+    - Fabric
