@@ -17,6 +17,9 @@ readme d'installation d'un nouveau pc ou d'une nouvelle VM
 - [ ] Write execution file(s) for (each|all)
   - [ ] Add config atom
   - [ ] Add dotfiles installation
+  - [ ] Add common-SSH key creation
+  - [ ] Add common-SSH key push to github ?
+  - [ ] Add common-rewrite repo URL ?
   - [ ] Add laptop-docker
   - [ ] Add laptop-vagrant
   - [ ] Add laptop-battery ?
@@ -33,3 +36,7 @@ lance ansible avec:</br>
 fichier host avec \[local\]localhost</br>
 fichier playbook.yml avec hosts:local connection:local</br>
 run: ansible-playbook -i hosts playbook.yml --ask-become-pass</br>
+
+---
+### TODOs post-install
+- [ ] Créer une clé SSH ?
