@@ -25,3 +25,6 @@
     packages:
     - virtualenv
     - Fabric
+
+- name: Installation atom
+  import_tasks: atom.yml
