@@ -2,10 +2,9 @@
 - name: Installation de paquets généraux
   become: yes
   apt:
-    name: "{{ packages }}"
+    name: "{{ item }}"
     state: latest
-  vars:
-    packages:
+  loop:
     - tree
     - git
     - plank
@@ -19,10 +18,9 @@
 - name: Installation pip
   become: yes
   pip:
-    name: "{{ packages }}"
+    name: "{{ item }}"
     state: latest
-  vars:
-    packages:
+  loop:
     - virtualenv
     - Fabric
 
