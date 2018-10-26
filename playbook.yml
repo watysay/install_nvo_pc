@@ -4,9 +4,9 @@
   hosts: localhost
   connection: local
 
-
   roles:
-    - import_role: common
+    - import_role:
+      name: common
       vars:
         atom_home: "{{ ansible_user_dir }}/.atom"
         dot_home: "{{ ansible_user_dir }}/dotfiles"
