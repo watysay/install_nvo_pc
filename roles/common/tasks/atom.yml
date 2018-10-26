@@ -1,5 +1,5 @@
 ---
-- name: Install a .deb package from the internet.
+- name: Install Atom directly from internet
   apt:
     deb: https://atom.io/download/deb
   become: yes
