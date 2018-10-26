@@ -5,15 +5,16 @@
     name: "{{ item }}"
     state: latest
   loop:
-    - tree
     - git
-    - plank
-    - vim
     - htop
-    - synaptic
+    - plank
     - python
-    - stow
     - python-pip
+    - rsync
+    - stow
+    - synaptic
+    - tree
+    - vim
 
 - name: Installation pip
   become: yes
@@ -28,3 +29,7 @@
 #   import_tasks: atom.yml
 #   vars:
 #     atom_home: "{{ ansible_user_dir }}/.atom"
+
+- name: Installation dotfiles
+  import_tasks: dotfiles.yml
+  

@@ -1,0 +1,28 @@
+---
+- name: Copy dotfiles repo
+  synchronize:
+    src: "{{ playbook_dir }}/dotfiles"
+    dest: "{{ ansible_user_dir }}"
+    recursive: yes
+  delegate_to: localhost
+
+- name: Stow dotfiles content
+  shell: "/usr/bin/stow -Rn {{ item }}"
+  args:
+    chdir: "{{ ansible_user_dir }}/dotfiles"
+  loop:
+    - atom
+    - bash
+    - git
+    - vim
+
+
+# only after dotfiles are processed..
+# 1 is install atom
+# 2 is install dotfiles
+# 3 is installing packages & themes
+# - name: Installing packages and themes
+#   shell: "/usr/bin/apm install --packages-file {{ atom_home }}/{{ item }}"
+#   loop:
+#     - packages.txt
+#     - themes.txt
