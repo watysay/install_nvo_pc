@@ -40,3 +40,5 @@ run: ansible-playbook -i hosts playbook.yml --ask-become-pass</br>
 ---
 ### TODOs post-install
 - [ ] Créer une clé SSH ?
+
+git submodule update --recursive --remote #MAJ du submodule
