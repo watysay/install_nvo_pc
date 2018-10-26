@@ -24,7 +24,7 @@
     - virtualenv
     - Fabric
 
-- name: Installation atom
-  import_tasks: atom.yml
-  vars:
-    atom_home: "{{ ansible_user_dir }}/.atom"
+# - name: Installation atom
+#   import_tasks: atom.yml
+#   vars:
+#     atom_home: "{{ ansible_user_dir }}/.atom"
