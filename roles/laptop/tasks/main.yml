@@ -1,9 +1,9 @@
 ---
 #- name: installation de Vagrant
-#   import_playbook: vagrant.yml
+#  import_playbook: vagrant.yml
 
 #- name: installation de Docker
-#   import_playbook: docker.yml
+#  import_playbook: docker.yml
 
 - name: ajout du groupe sarah
   become: yes
