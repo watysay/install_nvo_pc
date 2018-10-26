@@ -1,0 +1,26 @@
+---
+- name: Installation de paquets généraux
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - git
+    - htop
+    - plank
+    - python
+    - python-pip
+    - rsync
+    - stow
+    - synaptic
+    - tree
+    - vim
+
+- name: Installation pip
+  become: yes
+  pip:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - virtualenv
+    - Fabric

@@ -1,0 +1,6 @@
+---
+- name: ATOM | Installing packages and themes
+  shell: "/usr/bin/apm install --packages-file {{ dot_home }}/atom/.atom/{{ item }}"
+  loop:
+    - packages.txt
+    - themes.txt

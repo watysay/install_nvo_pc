@@ -6,7 +6,10 @@
 
 
   roles:
-    - common
+    - import_role: common
+      vars:
+        atom_home: "{{ ansible_user_dir }}/.atom"
+        dot_home: "{{ ansible_user_dir }}/dotfiles"
     #- laptop
 
 #comment laptop if in a VM
