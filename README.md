@@ -42,3 +42,4 @@ run: ansible-playbook -i hosts playbook.yml --ask-become-pass</br>
 - [ ] Créer une clé SSH ?
 
 git submodule update --recursive --remote #MAJ du submodule
+BEfore dotfiles part, remove ~/.bashrc & ~/.atom/config.cson
