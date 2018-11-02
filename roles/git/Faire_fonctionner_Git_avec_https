@@ -1,0 +1,73 @@
+# MAKE GIT GREAT AGAIN
+# Faire fonctionner Git avec https
+# - Impossible de puller un repo distant sur HTTPS (gnutls_hanshake KO)
+# - solution : recompiler git en remplacant gnutls par openssl
+
+# https://askubuntu.com/questions/186847/error-gnutls-handshake-failed-when-connecting-to-https-servers
+
+
+# si besoin
+sudo -E apt remove git
+sudo -E apt autoremove # cleanup
+
+# install du nécessaire
+sudo -E apt install build-essential fakeroot dpkg-dev libcurl4-openssl-dev -y
+
+# add git-core ppa repo
+sudo -E add-apt-repository ppa:git-core/ppa
+
+# in /etc/apt/sources.list.d/, check in git-core file
+# that line starting with "deb-src" is uncommented 
+# => need for built-dep and source
+sed 's/^# deb-src/deb-src/' /etc/apt/sources.list.d/*git*
+
+
+sudo -E apt-get update
+sudo -E apt-get build-dep git -y
+apt-get source git
+
+cd git-2.19.1
+
+
+# edit debian/control file and replace all instances 
+# of libcurl4-gnutls-dev with libcurl4-openssl-dev
+# found once at 8th line
+
+# this install did not work before ?
+sudo -E apt-get install libcurl4-openssl-dev -y
+
+# still in subdir git-*
+sudo dpkg-buildpackage -rfakeroot -b
+
+cd ..
+sudo dpkg -i git_<version>...amd64.deb
+
+# KO car manque git-man, qui se trouve dans le .deb ... => install apt and redo
+sudo -E apt-get git-man
+sudo dpkg -i git_<version>...amd64.deb
+
+# ---------------- DONE ---------------- #
+
+git clone https://XYZ/truc.git # ERROR
+# fatal: unable to access 'https://github.com/....git/': Unknown SSL protocol error in connection to github.com:443
+
+# tests :
+git config --global http.proxy $http_proxy => not better
+git config --global https.proxy $https_proxy => not better
+
+git config --global http.proxy ""
+git config --global https.proxy ""
+# ==> now error is : Failed to connect to github.com port 443: Connexion refusée
+
+# seems to ignore https.proxy ...
+
+# WHAt made it work :
+# --- --- --- --- --- --- --- --- --- --- --- --- --- 
+git config --global http.proxyAuthMethod basic
+# --- --- --- --- --- --- --- --- --- --- --- --- --- 
+
+
+# ---------------- DONE DONE (WORKING) ---------------- #
+
+
+
