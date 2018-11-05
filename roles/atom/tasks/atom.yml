@@ -1,39 +1,60 @@
 ---
-- name: Install Atom directly from internet
-  apt:
-    deb: https://atom.io/download/deb
-  become: yes
-  register: result
-  ignore_errors: True
+# - name: Install Atom directly from internet
+#   apt:
+#     deb: https://atom.io/download/deb
+#   become: yes
+#   register: result
+#   ignore_errors: True
+#
+# - name: Install Atom directly from internet
+#   block:
+#     - name: Retrieve Atom from internet
+#       shell: "wget https://atom.io/download/deb -O /tmp/atom.deb"
+#       args:
+#         creates: "/tmp/atom.deb"
+#
+#     - name: Install Atom retrieved earlier
+#       apt:
+#         deb: "/tmp/atom.deb"
+#
+#   when: result is failed
+#   become: yes
 
-# only after dotfiles are processed..
-# 1 is install atom
-# 2 is install dotfiles
-# 3 is installing packages & themes
+- name: Retrieve apm installer
+  shell: "which apm"
+  register: apm_installer
 
-# manual install (proxy ko ?): wget URL -O atom.deb && sudo dpkg -i atom.deb
+- name: debug
+  debug:
+    var: apm_installer
+    verbosity: 1
 
-- name: Install Atom directly from internet
-  block:
-    - name: Retrieve Atom from internet
-      shell: "wget https://atom.io/download/deb -O /tmp/atom.deb"
-      args:
-        creates: "/tmp/atom.deb"
-
-
-    - name: Install Atom retrieved earlier
-      apt:
-        deb: "/tmp/atom.deb"
-
-  when: result is failed
-  become: yes
+- name: Changing config proxy
+  shell: "{{ apm_installer.stdout }} config list | grep \"config.*{{ ansible_user_dir }}\" | cut -d '/' -f2-4 | uniq"
+  register: atom_home
 
 - name: Copy configuration
   copy:
     src: "{{ item }}"
-    dest: "{{ ansible_user_dir }}/atom/.atom/"
+    dest: "/{{ atom_home.stdout }}/"
     backup: yes
-  loop:
+  with_items:
     - config.cson
     - packages.txt
     - themes.txt
+
+- name: Changing config proxy
+  shell: "{{ apm_installer.stdout }} config set proxy {{ lookup('env', 'http_proxy') }}"
+
+- name: Changing config https_proxy
+  shell: "{{ apm_installer.stdout }} config set https_proxy {{ lookup('env', 'https_proxy') }}"
+
+- name: install packages  and themes
+  shell: "{{ apm_installer.stdout }} install --packages-file {{ item }}"
+  args:
+    chdir: "/{{ atom_home.stdout }}/"
+  with_items:
+    - packages.txt
+    - themes.txt
+
+# manual install (proxy ko ?): wget URL -O atom.deb && sudo dpkg -i atom.deb
