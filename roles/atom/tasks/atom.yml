@@ -27,3 +27,13 @@
 
   when: result is failed
   become: yes
+
+- name: Copy configuration
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/atom/.atom/"
+    backup: yes
+  loop:
+    - config.cson
+    - packages.txt
+    - themes.txt
