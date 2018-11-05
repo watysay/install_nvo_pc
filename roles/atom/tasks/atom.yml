@@ -3,6 +3,8 @@
   apt:
     deb: https://atom.io/download/deb
   become: yes
+  register: result
+  ignore_errors: True
 
 # only after dotfiles are processed..
 # 1 is install atom
@@ -11,3 +13,17 @@
 
 # manual install (proxy ko ?): wget URL -O atom.deb && sudo dpkg -i atom.deb
 
+- name: Install Atom directly from internet
+  block:
+    - name: Retrieve Atom from internet
+      shell: "wget https://atom.io/download/deb -O /tmp/atom.deb"
+      args:
+        creates: "/tmp/atom.deb"
+
+
+    - name: Install Atom retrieved earlier
+      apt:
+        deb: "/tmp/atom.deb"
+
+  when: result is failed
+  become: yes
