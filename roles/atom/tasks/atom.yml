@@ -1,2 +1,13 @@
 ---
+- name: Install Atom directly from internet
+  apt:
+    deb: https://atom.io/download/deb
+  become: yes
+
+# only after dotfiles are processed..
+# 1 is install atom
+# 2 is install dotfiles
+# 3 is installing packages & themes
+
+# manual install (proxy ko ?): wget URL -O atom.deb && sudo dpkg -i atom.deb
 
