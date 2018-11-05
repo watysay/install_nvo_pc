@@ -1,24 +1,24 @@
 ---
-# - name: Install Atom directly from internet
-#   apt:
-#     deb: https://atom.io/download/deb
-#   become: yes
-#   register: result
-#   ignore_errors: True
-#
-# - name: Install Atom directly from internet
-#   block:
-#     - name: Retrieve Atom from internet
-#       shell: "wget https://atom.io/download/deb -O /tmp/atom.deb"
-#       args:
-#         creates: "/tmp/atom.deb"
-#
-#     - name: Install Atom retrieved earlier
-#       apt:
-#         deb: "/tmp/atom.deb"
-#
-#   when: result is failed
-#   become: yes
+- name: Install Atom directly from internet
+  apt:
+    deb: https://atom.io/download/deb
+  become: yes
+  register: result
+  ignore_errors: True
+
+- name: Install Atom directly from internet
+  block:
+    - name: Retrieve Atom from internet
+      shell: "wget https://atom.io/download/deb -O /tmp/atom.deb"
+      args:
+        creates: "/tmp/atom.deb"
+
+    - name: Install Atom retrieved earlier
+      apt:
+        deb: "/tmp/atom.deb"
+
+  when: result is failed
+  become: yes
 
 - name: Retrieve apm installer
   shell: "which apm"
@@ -29,15 +29,25 @@
     var: apm_installer
     verbosity: 1
 
-- name: Changing config proxy
+- name: retreiving ATOM home
   shell: "{{ apm_installer.stdout }} config list | grep \"config.*{{ ansible_user_dir }}\" | cut -d '/' -f2-4 | uniq"
   register: atom_home
 
-- name: Copy configuration
+- name: Backup default configuration
   copy:
-    src: "{{ item }}"
-    dest: "/{{ atom_home.stdout }}/"
-    backup: yes
+    src: "/{{ atom_home.stdout }}/config.cson"
+    dest: "/{{ atom_home.stdout }}/config.cson.backup"
+
+- name: Backup default configuration
+  file:
+    path: "/{{ atom_home.stdout }}/config.cson"
+    state: absent
+
+- name: Copy configuration
+  file:
+    src: "{{ role_path }}/files/{{ item }}"
+    path: "/{{ atom_home.stdout }}/{{ item }}"
+    state: link
   with_items:
     - config.cson
     - packages.txt
@@ -52,7 +62,7 @@
 - name: install packages  and themes
   shell: "{{ apm_installer.stdout }} install --packages-file {{ item }}"
   args:
-    chdir: "/{{ atom_home.stdout }}/"
+    chdir: "/{{ atom_home.stdout }}"
   with_items:
     - packages.txt
     - themes.txt

@@ -6,7 +6,7 @@
 
   roles:
     - import_role:
-      name: common
+      name: atom
       vars:
         atom_home: "{{ ansible_user_dir }}/.atom"
         dot_home: "{{ ansible_user_dir }}/dotfiles"
