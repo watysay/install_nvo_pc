@@ -68,3 +68,6 @@
     - themes.txt
 
 # manual install (proxy ko ?): wget URL -O atom.deb && sudo dpkg -i atom.deb
+# retrieve:
+#  apm list --installed --bare --themes > themes.txt
+#  apm list --installed --bare --packages > packages.txt
