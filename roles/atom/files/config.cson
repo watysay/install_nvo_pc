@@ -1,7 +1,6 @@
 "*":
   "atom-ide-ui":
-    use:
-      "atom-ide-diagnostics-ui": false
+    use: {}
   core:
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"

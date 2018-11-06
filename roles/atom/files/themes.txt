@@ -1,3 +1,4 @@
 solarized-dark-ui@0.3.2
 solarized-light-ui@0.1.0
-solarized-one-light-ui
+solarized-one-light-ui@1.12.5
+

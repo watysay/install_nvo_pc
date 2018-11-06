@@ -1,5 +1,12 @@
-atom-ide-ui@0.5.3
-autocomplete-python@1.10.3
-ide-python@0.2.3
-script@3.17.3
+Sublime-Style-Column-Selection@1.7.5
+atom-ide-ui@0.13.0
+autocomplete-python@1.11.0
+busy-signal@1.4.3
+file-icons@2.1.26
+ide-python@1.0.0
+intentions@1.1.5
+linter@2.2.0
+linter-flake8@2.3.0
+linter-ui-default@1.7.1
+script@3.18.1
 
