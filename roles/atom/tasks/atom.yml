@@ -29,24 +29,20 @@
     var: apm_installer
     verbosity: 1
 
-- name: retreiving ATOM home
-  shell: "{{ apm_installer.stdout }} config list | grep \"config.*{{ ansible_user_dir }}\" | cut -d '/' -f2-4 | uniq"
-  register: atom_home
-
 - name: Backup default configuration
   copy:
-    src: "/{{ atom_home.stdout }}/config.cson"
-    dest: "/{{ atom_home.stdout }}/config.cson.backup"
+    src: "{{ atom_home }}/config.cson"
+    dest: "{{ atom_home }}/config.cson.backup"
 
 - name: Backup default configuration
   file:
-    path: "/{{ atom_home.stdout }}/config.cson"
+    path: "{{ atom_home }}/config.cson"
     state: absent
 
 - name: Copy configuration
   file:
     src: "{{ role_path }}/files/{{ item }}"
-    path: "/{{ atom_home.stdout }}/{{ item }}"
+    path: "{{ atom_home }}/{{ item }}"
     state: link
   with_items:
     - config.cson
@@ -62,7 +58,7 @@
 - name: install packages  and themes
   shell: "{{ apm_installer.stdout }} install --packages-file {{ item }}"
   args:
-    chdir: "/{{ atom_home.stdout }}"
+    chdir: "{{ atom_home }}"
   with_items:
     - packages.txt
     - themes.txt
