@@ -2,6 +2,9 @@
   "atom-ide-ui":
     use: {}
   core:
+    disabledPackages: [
+      "linter"
+    ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
     themes: [

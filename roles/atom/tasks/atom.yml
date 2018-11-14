@@ -18,7 +18,6 @@
         deb: "/tmp/atom.deb"
 
   when: result is failed
-  become: yes
 
 - name: Retrieve apm installer
   shell: "which apm"
