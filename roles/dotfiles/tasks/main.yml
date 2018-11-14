@@ -1,0 +1,4 @@
+---
+- name: DOT | Installation dotfiles
+  import_tasks: dotfiles.yml
+  tags: dot

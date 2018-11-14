@@ -1,7 +1,3 @@
 ---
 - name: Installation de paquets généraux
   import_tasks: general.yml
-
-- name: DOT | Installation dotfiles
-  import_tasks: dotfiles.yml
-  tags: dot
