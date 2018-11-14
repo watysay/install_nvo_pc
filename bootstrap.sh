@@ -1,10 +1,16 @@
 #!/bin/bash
 
+git_repo="https://github.com/watysay/install_nvo_pc.git"
+install_dir="$HOME/install_nvo_pc"
+
 # getting sudo rights
 sudo -v
 
 sudo apt-get install software-properties-common -yq
-sudo apt-add-repository ppa:ansible/ansible -y
+# add repo for latest ansible
+sudo apt-add-repository ppa:ansible/ansible -yq
+# add repo for latest git
+sudo apt-add-repository ppa:git-core/ppa -yq
 
 # prolonging sudo rights
 sudo -v
@@ -18,10 +24,8 @@ sudo apt-get install git ansible -yq
 
 #--- preliminary installations ~ 20 min ---
 
-
-cd $HOME
-git clone https://github.com/watysay/install_nvo_pc.git
-cd install_nvo_pc
+git clone ${git_repo} ${install_dir}
+cd ${install_dir}
 
 # prolonging sudo rights
 sudo -v
