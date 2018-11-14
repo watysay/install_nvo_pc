@@ -5,7 +5,10 @@
   connection: local
 
   roles:
+    - common
+    - dotfiles
     - atom
+    - git
 
 #comment laptop if in a VM
 ...
