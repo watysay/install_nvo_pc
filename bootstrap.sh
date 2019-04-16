@@ -8,9 +8,9 @@ sudo -v
 
 sudo apt-get install software-properties-common -yq
 # add repo for latest ansible
-sudo apt-add-repository ppa:ansible/ansible -yq
+sudo apt-add-repository ppa:ansible/ansible -y
 # add repo for latest git
-sudo apt-add-repository ppa:git-core/ppa -yq
+sudo apt-add-repository ppa:git-core/ppa -y
 
 # prolonging sudo rights
 sudo -v
