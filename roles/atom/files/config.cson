@@ -1,5 +1,7 @@
 "*":
   "atom-ide-ui":
+    "atom-ide-terminal":
+      rendererType: "dom"
     use: {}
   core:
     disabledPackages: [
@@ -16,7 +18,9 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "c1143b80-85be-b6ff-c35d-d6887b91c881"
+  "linter-ui-default": {}
   script:
     cwdBehavior: "Project directory of the script"
+  "tree-view": {}
   welcome:
     showOnStartup: false
