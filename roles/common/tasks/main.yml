@@ -1,3 +1,13 @@
 ---
+- name: Mise a jour apt
+  apt:
+    update_cache: yes
+    cache_valid_time: 18000
+
 - name: Installation de paquets généraux
-  import_tasks: general.yml
+  become: yes
+  apt:
+    name: "{{ packages }}"
+    state: present
+
+

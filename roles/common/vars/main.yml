@@ -1,0 +1,21 @@
+packages:
+  - ansible
+  - build-essential
+  - cifs-utils
+  - curl
+  - dos2unix
+  - geany
+  - git
+  - htop
+  - nmap
+  - python3
+  - python3-pip
+  - remmina
+  - rsync
+  - stow
+  - synaptic
+  - terminator
+  - tmux
+  - tree
+  - vim
+  - wget

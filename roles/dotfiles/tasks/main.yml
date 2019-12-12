@@ -1,4 +1,8 @@
 ---
-- name: DOT | Installation dotfiles
-  import_tasks: dotfiles.yml
-  tags: dot
+- name: DOT | Copy dotfiles repo
+  git:
+    repo: "https://github.com/watysay/dotfiles.git"
+    dest: "{{ dot_home }}"
+
+- name: DOT | deploy dotfiles content
+  command: make -C "{{ dot_home }}"
