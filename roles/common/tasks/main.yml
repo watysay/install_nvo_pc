@@ -1,5 +1,6 @@
 ---
 - name: Mise a jour apt
+  become: yes
   apt:
     update_cache: yes
     cache_valid_time: 18000
