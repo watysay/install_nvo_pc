@@ -10,7 +10,7 @@
 
   roles:
     - common
-    - dotfiles
-    - { role: git, become: yes }
-    - { role: laptop, tags: [ 'never','laptop'] }
+#    - dotfiles
+#    - { role: git, become: yes }
+#    - { role: laptop, tags: [ 'never','laptop'] }
 

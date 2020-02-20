@@ -8,6 +8,8 @@ packages:
   - git
   - htop
   - nmap
+  - python
+  - python-pip
   - python3
   - python3-pip
   - remmina
@@ -19,3 +21,7 @@ packages:
   - tree
   - vim
   - wget
+
+pip_packages:
+  - virtualenv
+
