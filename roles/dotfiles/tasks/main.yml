@@ -3,6 +3,7 @@
   git:
     repo: "https://github.com/watysay/dotfiles.git"
     dest: "{{ dot_home }}"
+    version: "{{ dotfiles_version }}"
 
 - name: DOT | deploy dotfiles content
   command: make -C "{{ dot_home }}"

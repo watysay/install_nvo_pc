@@ -3,14 +3,14 @@
   hosts: localhost
   connection: local
   vars:
-    dotfiles_version: 'master'
+    dotfiles_version: 'evol/rework'
     dot_home: "{{ ansible_user_dir }}/.dotfiles"
   environment:
     http_proxy: "{{ lookup('env','http_proxy') }}"
 
   roles:
     - common
-#    - dotfiles
-#    - { role: git, become: yes }
-#    - { role: laptop, tags: [ 'never','laptop'] }
+    - dotfiles
+    - { role: git, become: yes }
+    - { role: laptop, tags: [ 'never','laptop'] }
 
