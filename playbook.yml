@@ -11,6 +11,13 @@
   roles:
     - common
     - dotfiles
-    - { role: git, become: yes }
-    - { role: laptop, tags: [ 'never','laptop'] }
+    - role: git
+      become: yes
+    - role: laptop
+      tags: [ 'never','laptop']
+    - role: geerlingguy.docker
+      become: yes
+      vars:
+        docker_users:
+          - seb
 
