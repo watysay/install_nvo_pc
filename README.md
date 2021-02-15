@@ -28,7 +28,7 @@ readme d'installation d'un nouveau pc ou d'une nouvelle VM
 
 ---
 ## HOWTO :
-Install: wget -O bootstrap.sh https://raw.githubusercontent.com/watysay/install_nvo_pc/master/bootstrap.sh && bash bootstrap.sh
+Install: wget https://raw.githubusercontent.com/watysay/install_nvo_pc/master/bootstrap.sh && bash bootstrap.sh
 
 ---
 ## BASIQUE
