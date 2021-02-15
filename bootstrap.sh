@@ -1,10 +1,21 @@
 #!/bin/bash
 
+# bootstrap.sh
+
+# bootstrap the installation of the pc
+
+# installs git ansible
+# clone the repo
+# launch ansible
+
+### vars ###
 git_repo="https://github.com/watysay/install_nvo_pc.git"
 install_dir="$HOME/install_nvo_pc"
 
+### args ###
+branch=${1:-"master"}
 
-
+### functions ###
 get_distro_info(){ 
   if [[ -e /etc/os-release ]]; then
     . /etc/os-release
@@ -28,6 +39,9 @@ getUbuntuVersion(){
     && echo "$VERSION_ID" \
     || echo ""
 } 
+
+
+### main ###
 
 # getting sudo rights
 sudo -v
@@ -55,6 +69,12 @@ sudo apt-get install git ansible -yq
 
 git clone ${git_repo} ${install_dir}
 cd ${install_dir}
+if ! git checkout "${branch}"; then
+  echo "
+  This branch does not exists
+  Please checkout a real branch before launching the job"
+  exit 1
+fi
 
 # prolonging sudo rights
 sudo -v
