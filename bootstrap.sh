@@ -35,7 +35,7 @@ sudo -v
 sudo apt-get install software-properties-common -yq
 # add repo for latest ansible
 # not working for ubuntu > 20
-[[ getUbuntuVersion = 20* ]] \
+[[ $(getUbuntuVersion) = 20* ]] \
   || sudo apt-add-repository ppa:ansible/ansible -y
 
 # add repo for latest git
