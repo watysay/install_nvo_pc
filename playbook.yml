@@ -18,6 +18,5 @@
     - role: geerlingguy.docker
       become: yes
       vars:
-        docker_users:
-          - seb
-
+        docker_users: [ "{{ ansible_user }}" ]
+        docker_compose_version: "1.28.2"
