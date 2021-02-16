@@ -1,3 +1,5 @@
 atom.deb
 *retry
 tmp*
+tests/.vagrant
+tests/.ssh
