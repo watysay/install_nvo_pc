@@ -3,8 +3,8 @@
   hosts: localhost
   connection: local
   vars:
-    dotfiles_version: 'evol/rework'
-    dot_home: "{{ ansible_user_dir }}/.dotfiles"
+    docker_users: [ "{{ ansible_env.USER }}" ]
+    docker_compose_version: "1.28.2"
   environment:
     http_proxy: "{{ lookup('env','http_proxy') }}"
 
@@ -17,6 +17,3 @@
       tags: [ 'never','laptop']
     - role: geerlingguy.docker
       become: yes
-      vars:
-        docker_users: [ "{{ ansible_env.USER }}" ]
-        docker_compose_version: "1.28.2"

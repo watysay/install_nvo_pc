@@ -1,0 +1,3 @@
+---
+dotfiles_version: 'master'
+dot_home: "{{ ansible_env.HOME }}/.dotfiles"
