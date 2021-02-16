@@ -3,3 +3,4 @@ atom.deb
 tmp*
 tests/.vagrant
 tests/.ssh
+playbook2.yml
