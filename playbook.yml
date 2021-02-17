@@ -1,7 +1,6 @@
 ---
 - name: a playbook to setup my local machine with my basic customizations
-  hosts: localhost
-  connection: local
+  hosts: all
   vars:
     docker_users: [ "{{ ansible_env.USER }}" ]
     docker_compose_version: "1.28.2"

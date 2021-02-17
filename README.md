@@ -35,8 +35,8 @@ Install: wget https://raw.githubusercontent.com/watysay/install_nvo_pc/master/bo
 bootstrap.sh update/upgrade le system</br>
 il télécharge ensuite git et ansible, clone ce repo</br>
 lance ansible avec:</br>
-fichier playbook.yml avec hosts:localhost connection:local</br>
-run: ansible-playbook -i localhost, playbook.yml</br>
+fichier playbook.yml avec inventory configuré sur self</br>
+run: ansible-playbook -i inventory playbook.yml</br>
 (pas besoin de sudo car déjà utilisé par apt)
 
 ---
