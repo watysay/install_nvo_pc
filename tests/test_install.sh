@@ -22,4 +22,4 @@ readonly ARGS="$@"
 
 vagrant destroy -f \
   && vagrant up \
-  && vagrant ssh -c 'bash bootstrap.sh'
+  && vagrant ssh -c 'bash -x bootstrap.sh |& tee play_$(date +%H%M%S).log'

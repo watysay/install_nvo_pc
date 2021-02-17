@@ -8,6 +8,8 @@
 # clone the repo
 # launch ansible
 
+set -e # stop on failure, so I can relaunch
+
 ### vars ###
 git_repo="https://github.com/watysay/install_nvo_pc.git"
 install_dir="$HOME/install_nvo_pc"
@@ -66,16 +68,19 @@ sudo apt-get upgrade -yq
 sudo apt-get install git ansible -yq
 
 #--- preliminary installations ~ 20 min ---
-
-git clone ${git_repo} ${install_dir}
-cd ${install_dir}
-if ! git checkout "${branch}"; then
-  echo "
-  This branch does not exists
-  Please checkout a real branch before launching the job"
-  exit 1
+if [[ -f playbook.yml ]]; then
+  # if the playbook is in the directory => play without clone
+  echo "Playbook exists, launching ..."
+else
+  git clone ${git_repo} ${install_dir}
+  cd ${install_dir}
+  if ! git checkout "${branch}"; then
+    echo "
+    This branch does not exists
+    Please checkout a real branch before launching the job"
+    exit 1
+  fi
 fi
-
 # prolonging sudo rights
 sudo -v
 ansible-galaxy install geerlingguy.docker,3.0.0
