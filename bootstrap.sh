@@ -79,4 +79,4 @@ fi
 # prolonging sudo rights
 sudo -v
 ansible-galaxy install geerlingguy.docker,3.0.0
-ansible-playbook -i localhost, playbook.yml
+ansible-playbook -i inventory playbook.yml
