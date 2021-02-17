@@ -6,6 +6,7 @@
 #   destroy machine if exists
 #   create (up)
 #   ssh in the machine
+#   execute the bootstrap
 
 # extended use :
 #   first arg is passed directly to vagrant command
@@ -15,24 +16,10 @@
 #   and run "wget ..." command, etc
 #   (execute standard proc for installing the machine)
 
-ARGS="$@"
-cmd="$1"
+readonly PROGNAME=$(basename $0)
+readonly PROGDIR=$(readlink -m $(dirname $0))
+readonly ARGS="$@"
 
-create_try_script(){
-  b_name=$(git branch --show-current)
-  cat <<EOF > try.sh
-wget https://raw.githubusercontent.com/watysay/install_nvo_pc/${b_name}/bootstrap.sh
-bash bootstrap.sh ${b_name}
-EOF
-  chmod u+x try.sh
-}
-
-if [[ -n ${cmd} ]]; then
-  vagrant "${cmd}"
-else
-  create_try_script
-  vagrant destroy -f \
-    && vagrant up \
-    && vagrant ssh -c './try.sh'
-
-fi
+vagrant destroy -f \
+  && vagrant up \
+  && vagrant ssh -c 'bash bootstrap.sh'
