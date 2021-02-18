@@ -12,10 +12,11 @@
 - name: get git version
   shell: "$(which git) --version | cut -d' ' -f3"
   register: git_version
+  changed_when: false
 
 - name: show git version retrieved
   debug:
-    var: git_version
+    var: git_version.stdout
 
 - name: retrieve git-completion script
   get_url:

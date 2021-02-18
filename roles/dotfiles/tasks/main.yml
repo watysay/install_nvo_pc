@@ -7,3 +7,5 @@
 
 - name: DOT | deploy dotfiles content
   command: make -C "{{ dot_home }}"
+  args:
+    creates: "{{ ansible_env.HOME}}/.bash_aliases"
