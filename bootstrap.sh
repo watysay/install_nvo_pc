@@ -61,11 +61,11 @@ sudo apt-add-repository ppa:git-core/ppa -y
 sudo -v
 
 # upgrading
-sudo apt-get update -yq
-sudo apt-get upgrade -yq
+sudo apt-get update -qq
+sudo apt-get upgrade -qq
 
 # install needed parts for launching ansible
-sudo apt-get install git ansible -yq
+sudo apt-get install git ansible -qq
 
 #--- preliminary installations ~ 20 min ---
 if [[ -f playbook.yml ]]; then
